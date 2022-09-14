@@ -1,70 +1,186 @@
 .container {
-  padding: 0 2rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-right: 10%;
+  margin-left: auto;
+  gap: 25px;
+  width: 450px;
+}
+
+.formContol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formContolDate {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.formwrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
 .leftSide {
   min-width: 300px;
   width: 30%;
   height: 100vh;
-  background:  url("../public/background.png");
+  background: url("../public/background.png");
 }
-.cardFront{
+
+.rightSide {
+  display: flex;
+  width: 100%;
+}
+
+.cardFront {
   width: 530px;
   height: 290px;
-  top:160px;
-  position: absolute; 
-  left:10%;
+  top: 160px;
+  position: absolute;
+  left: 10%;
   z-index: 10;
 }
-.cardBack{
+
+.cardBack {
   width: 530px;
   height: 290px;
-  top:490px;
-  position: absolute; 
-  left:15%;
+  top: 490px;
+  position: absolute;
+  left: 15%;
 }
-@media only screen and (max-width: 1200px) {
-  .cardFront{
+
+.label {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #939094;
+}
+.button {
+  height: 53px;
+  background: #220A2E;
+  border-radius: 5px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  margin-top: 25px;
+}
+
+
+.formInput {
+  width: 100%;
+  height: 53px;
+  border: 1px solid #AEB6BF;
+  border-radius: 5px;
+  padding: 26px;
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  color: #939094;
+}
+
+@media only screen and (max-width: 1300px) {
+  .form {
+    margin-right: 8%;
+  }
+
+  .cardFront {
     width: 406px;
     height: 225px;
-    top:230px;
-    position: absolute; 
-    left:5%;
+    top: 230px;
+    position: absolute;
+    left: 5%;
     z-index: 10;
   }
-  .cardBack{
+
+  .cardBack {
     width: 406px;
     height: 225px;
-    top:480px;
-    position: absolute; 
-    left:10%;
+    top: 480px;
+    position: absolute;
+    left: 10%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .form {
+    width: 400px;
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .cardFront{
+@media only screen and (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    gap: 20px;
+    width: 375px;
+  }
+
+  .label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #939094;
+  }
+
+  .cardFront {
     width: 325px;
     height: 180px;
-    top:150px;
-    position: absolute; 
-    left:70px;
+    top: 150px;
+    position: absolute;
+    left: 70px;
     z-index: 10;
   }
-  .cardBack{
+
+  .cardBack {
     width: 325px;
     height: 180px;
-    top:40px;
-    position: absolute; 
+    top: 40px;
+    position: absolute;
     left: calc(100% - 395px);
   }
-  .container {
-    padding: none;
+
+  .rightSide {
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    height: calc(100vh - 280px);
   }
-  
+
   .leftSide {
     width: auto;
     height: 280px;
@@ -73,20 +189,22 @@
     background-repeat: no-repeat;
   }
 }
+
 @media only screen and (max-width: 500px) {
-  .cardFront{
+  .cardFront {
     width: 325px;
     height: 180px;
-    top:150px;
-    position: absolute; 
-    left:15px;
+    top: 150px;
+    position: absolute;
+    left: 15px;
     z-index: 10;
   }
-  .cardBack{
+
+  .cardBack {
     width: 325px;
     height: 180px;
-    top:40px;
-    position: absolute; 
+    top: 40px;
+    position: absolute;
     left: calc(100% - 345px);
   }
 }
