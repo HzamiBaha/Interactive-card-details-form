@@ -1,0 +1,182 @@
+.cardWrapper {
+    width: 100%;
+    height: 100%;
+    background: url("../public/cardbackground.png");
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cardWrapperback {
+    width: 100%;
+    height: 100%;
+    background: url("../public/cardBackground2.png");
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.cardNumber {
+    width: 440px;
+    min-width: fit-content;
+    height: 42px;
+    text-transform: uppercase;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    letter-spacing: 0.1em;
+    color: #FBF8F8;
+    margin: auto;
+    padding-top: 160px;
+    display: flex;
+}
+
+.userInfo {
+    width: 440px;
+    height: 22px;
+    display: flex;
+    justify-content: space-between;
+    margin: 65px auto 0px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+
+.cvcBox {
+    width: 429px;
+    height: 50px;
+    background: #ADB5BF;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #FFFFFF;
+}
+
+@media only screen and (max-width: 1300px) {
+    .cvcBox {
+        width: 350px;
+        height: 40px;
+        background: #ADB5BF;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 20px;
+    
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+    
+        color: #FFFFFF;
+    }
+    .userInfo {
+        width: 350px;
+        height: 22px;
+        display: flex;
+        justify-content: space-between;
+        margin: 65px auto 0px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+    }
+
+    .cardNumber {
+        width: 350px;
+        min-width: fit-content;
+        height: 42px;
+        text-transform: uppercase;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        letter-spacing: 0.1em;
+        color: #FBF8F8;
+        margin: auto;
+        padding-top: 100px;
+        display: flex;
+    }
+
+}
+
+@media only screen and (max-width: 1100px) {
+    .form {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .cvcBox {
+        width: 280px;
+        height: 30px;
+        background: #ADB5BF;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 20px;
+    
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 22px;
+    
+        color: #FFFFFF;
+    }
+    .userInfo {
+        width: 280px;
+        height: 22px;
+        display: flex;
+        justify-content: space-between;
+        margin: 50px auto 0px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+    }
+
+    .cardNumber {
+        width: 280px;
+        min-width: fit-content;
+        height: 42px;
+        text-transform: uppercase;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 23px;
+        letter-spacing: 0.08em;
+        color: #FBF8F8;
+        margin: auto;
+        padding-top: 80px;
+        display: flex;
+    }
+}

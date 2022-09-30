@@ -1,129 +1,280 @@
-.container {
-  padding: 0 2rem;
+.error{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
+  color: #e51717;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.check {
+  margin: 0px auto;
+  width: 75px;
+  height: 75px;
+  left: 179px;
+  top: 373px;
+  border-radius: 50%;
+  background: linear-gradient(143.06deg, #5D42DB 16.48%, #600CA0 95.71%);
+  display: grid;
+  place-items: center;
+}
+
+.Success {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0px auto;
+  color: #220A2E;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: 0px auto;
+  background: url("../public/charm_tick.png");
+}
+
+.SuccessState{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  margin-right: 10%;
+  margin-left: auto;
+  gap: 25px;
+  width: 450px;
 }
 
-.footer {
+.form {
   display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  margin-right: 10%;
+  margin-left: auto;
+  gap: 25px;
+  width: 450px;
 }
 
-.footer a {
+.formContol {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formContolDate {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.formwrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.leftSide {
+  min-width: 300px;
+  width: 30%;
+  height: 100vh;
+  background: url("../public/background.png");
+}
+
+.rightSide {
+  display: flex;
+  width: 100%;
+}
+
+.cardFront {
+  width: 530px;
+  height: 290px;
+  top: 160px;
+  position: absolute;
+  left: 10%;
+  z-index: 10;
+}
+
+.cardBack {
+  width: 530px;
+  height: 290px;
+  top: 490px;
+  position: absolute;
+  left: 15%;
+}
+
+.label {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
   align-items: center;
-  flex-grow: 1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #939094;
 }
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.labelSuc{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #939094;
+  margin: 0px auto;
 }
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
+.button {
+  height: 53px;
+  background: #220A2E;
   border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  margin-top: 25px;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+
+.formInput {
+  width: 100%;
+  height: 53px;
+  border: 1px solid #AEB6BF;
+  border-radius: 5px;
+  padding: 26px;
+  font-family: 'Inter';
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  color: #939094;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+@media only screen and (max-width: 1300px) {
+  .form {
+    margin-right: 8%;
+  }
+
+  .cardFront {
+    width: 406px;
+    height: 225px;
+    top: 230px;
+    position: absolute;
+    left: 5%;
+    z-index: 10;
+  }
+
+  .cardBack {
+    width: 406px;
+    height: 225px;
+    top: 480px;
+    position: absolute;
+    left: 10%;
+  }
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+@media only screen and (max-width: 1100px) {
+  .form {
+    width: 400px;
+  }
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
+@media only screen and (max-width: 1000px) {
+  .container {
+    display: flex;
     flex-direction: column;
   }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    gap: 20px;
+    width: 375px;
+  }
+
+  .label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #939094;
+  }
+
+  .cardFront {
+    width: 325px;
+    height: 180px;
+    top: 150px;
+    position: absolute;
+    left: 70px;
+    z-index: 10;
+  }
+
+  .cardBack {
+    width: 325px;
+    height: 180px;
+    top: 40px;
+    position: absolute;
+    left: calc(100% - 395px);
+  }
+
+  .rightSide {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 280px);
+  }
+
+  .leftSide {
+    width: auto;
+    height: 280px;
+    background: content-box url("../public/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  .card,
-  .footer {
-    border-color: #222;
+@media only screen and (max-width: 500px) {
+  .cardFront {
+    width: 325px;
+    height: 180px;
+    top: 150px;
+    position: absolute;
+    left: 15px;
+    z-index: 10;
   }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
+
+  .cardBack {
+    width: 325px;
+    height: 180px;
+    top: 40px;
+    position: absolute;
+    left: calc(100% - 345px);
   }
 }
