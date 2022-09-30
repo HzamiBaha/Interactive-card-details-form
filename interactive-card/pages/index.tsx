@@ -22,9 +22,16 @@ const Home: NextPage = () => {
     year: "",
     cvc: "",
   });
-
+  const [success, setsuccess] = useState(false)
+  const [cvcError, setcvcError] = useState("")
+  const [monthError, setmonthError] = useState("")
+  const [yearError, setyearError] = useState("")
+  const [cardError, setcardError] = useState("")
   useEffect(() => {
     const cardInput = (document.getElementById("card") as HTMLInputElement);
+    const yearInput = (document.getElementById("year") as HTMLInputElement);
+    const monthInput = (document.getElementById("month") as HTMLInputElement);
+    const cvcInput = (document.getElementById("cvc") as HTMLInputElement);
     if (cardInput != null) {
       cardInput.addEventListener("keydown", function (e) {
         const txt = this.value;
@@ -35,17 +42,92 @@ const Home: NextPage = () => {
           this.value = this.value + " ";
       });
     }
+    if (yearInput != null) {
+      yearInput.addEventListener("keydown", function (e) {
+        const txt = this.value;
+        if ((txt.length == 2 || e.which == 32) && e.which !== 8) e.preventDefault();
+      });
+    }
+    if (monthInput != null) {
+      monthInput.addEventListener("keydown", function (e) {
+        const txt = this.value;
+        if ((txt.length == 2 || e.which == 32) && e.which !== 8) e.preventDefault();
+      });
+    }
+    if (cvcInput != null) {
+      cvcInput.addEventListener("keydown", function (e) {
+        const txt = this.value;
+        if ((txt.length == 3 || e.which == 32) && e.which !== 8) e.preventDefault();
+      });
+    }
   }, [])
 
+
+  const cvcErrorHandler = (cvc: string) => {
+
+    if (cvc.length <= 2) {
+      setcvcError("Cvc should contain 3 digts")
+    }
+    else if (!(Number(cvc))) {
+      setcvcError("please enter a valid CVC")
+    }
+    else {
+      setcvcError("")
+    }
+  }
+  const monthErrorHandler = (month: string) => {
+    if (!(Number(month)) || (Number(month) >= 13 || Number(month) == 0 || month.length <= 1)) {
+      setmonthError("Please enter a valid month")
+    }
+    else {
+      setmonthError("")
+    }
+  }
+  const cardErrorHandler = (card: string) => {
+    if (!(Number(card.replace(/\s/g, ''))) || (card.replace(/\s/g, '').length < 16)) {
+      setcardError("Please enter a valid card Number")
+    }
+    else {
+      setcardError("")
+    }
+  }
+  const yearErrorHandler = (year: string) => {
+    const current = new Date().getFullYear()
+    console.log(current.toString().slice(2, 4))
+    console.log(year)
+    if (!(Number(year)) || year.length <= 1) {
+      setyearError("Please enter a valid year")
+    }
+    else if (Number(year) <= Number(current.toString().slice(2, 3))) {
+      console.log("bingo")
+      setyearError("your card was expired")
+    }
+    else {
+      setyearError("")
+    }
+  }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+    cvcErrorHandler(values.cvc)
+    monthErrorHandler(values.month)
+    yearErrorHandler(values.year)
+    cardErrorHandler(values.number)
+
     event.preventDefault();
-    console.log(values)
+    console.log("cvc:", cvcError, "year:", yearError, "month:", monthError, "number:", cardError)
+
   }
+  useEffect(() => {
+    if ((yearError === "") && (monthError === "") && (cvcError === "") && (cardError === "")) {
+      setsuccess(true)
+
+    }
+  }, [yearError, monthError, cvcError, cardError])
 
   return (
     <div className={styles.container}>
@@ -54,68 +136,82 @@ const Home: NextPage = () => {
       <div className={styles.leftSide}></div>
       <div className={styles.rightSide}>
 
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <div className={styles.formContol}>
-            <label className={styles.label}>CARDHOLDER Name</label>
-            <input
-              className={styles.formInput}
-              placeholder="e.g.Jane Applessed"
-              type="text"
-              name="name"
-              value={values.name || ""}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className={styles.formContol}>
-            <label className={styles.label} >CARD NUMBER</label>
-            <input
-              id='card'
-              className={styles.formInput}
-              placeholder="e.g.0000 0000 0000 0000"
-              type="pattern"
-              name="number"
-              pattern='[\d]{4} [\d]{4} [\d]{4} [\d]{4}'
-              value={values.number || ""}
-              onChange={handleChange}
-            />
-          </div>
-          <div className={styles.formwrapper}>
-            <div className={styles.formContol} style={{ width: "50%" }}>
-              <label className={styles.label} >exp. date (mm/YY) </label>
-              <div className={styles.formContolDate}>
-                <input
-                  className={styles.formInput}
-                  placeholder="MM"
-                  type="text"
-                  name="month"
-                  value={values.month || ""}
-                  onChange={handleChange}
-                />
-                <input
-                  className={styles.formInput}
-                  placeholder="YY"
-                  type="text"
-                  name="year"
-                  value={values.year || ""}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className={styles.formContol} style={{ width: "50%" }}>
-              <label className={styles.label} >CVC</label>
+        {success ? <> <button onClick={() => { setsuccess(false) }}></button> </> : <>
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <div className={styles.formContol}>
+              <label className={styles.label}>CARDHOLDER Name</label>
               <input
                 className={styles.formInput}
+                placeholder="e.g.Jane Applessed"
                 type="text"
-                name="cvc"
-                value={values.cvc || ""}
+                name="name"
+                value={values.name || ""}
                 onChange={handleChange}
               />
             </div>
-          </div>
 
-          <input className={styles.button} type="submit" value="Confirm" />
-        </form>
+            <div className={styles.formContol}>
+              <label className={styles.label} >CARD NUMBER</label>
+              <input
+                id='card'
+                className={styles.formInput}
+                placeholder="e.g.0000 0000 0000 0000"
+                type="pattern"
+                name="number"
+                value={values.number || ""}
+                onChange={handleChange}
+              />
+              <span>{cardError}</span>
+            </div>
+            <div className={styles.formwrapper}>
+              <div className={styles.formContol} style={{ width: "50%" }}>
+                <label className={styles.label} >exp. date (mm/YY) </label>
+                <div className={styles.formContolDate}>
+                  <div>
+                    <input
+                      id='month'
+                      className={styles.formInput}
+                      placeholder="MM"
+                      type="text"
+                      name="month"
+                      value={values.month || ""}
+                      onChange={handleChange}
+                    />
+                    <span>{monthError}</span>
+                  </div>
+                  <div>
+                    <input
+                      id='year'
+                      className={styles.formInput}
+                      placeholder="YY"
+                      type="text"
+                      name="year"
+                      value={values.year || ""}
+                      onChange={handleChange}
+                    />
+                    <span>{yearError}</span>
+                  </div>
+
+                </div>
+              </div>
+              <div className={styles.formContol} style={{ width: "50%" }}>
+                <label className={styles.label} >CVC</label>
+                <input
+                  id='cvc'
+                  className={styles.formInput}
+                  type="text"
+                  name="cvc"
+                  value={values.cvc || ""}
+                  onChange={handleChange}
+                />
+                <span>{cvcError}</span>
+              </div>
+            </div>
+
+            <input className={styles.button} type="submit" value="Confirm" />
+          </form> </>}
+
+
       </div>
 
     </div>
