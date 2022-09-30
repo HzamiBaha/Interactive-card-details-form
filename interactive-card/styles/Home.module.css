@@ -1,6 +1,62 @@
+.error{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
+  color: #e51717;
+}
+
 .container {
   display: flex;
   flex-direction: row;
+}
+
+.check {
+  margin: 0px auto;
+  width: 75px;
+  height: 75px;
+  left: 179px;
+  top: 373px;
+  border-radius: 50%;
+  background: linear-gradient(143.06deg, #5D42DB 16.48%, #600CA0 95.71%);
+  display: grid;
+  place-items: center;
+}
+
+.Success {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0px auto;
+  color: #220A2E;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  margin: 0px auto;
+  background: url("../public/charm_tick.png");
+}
+
+.SuccessState{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 10%;
+  margin-left: auto;
+  gap: 25px;
+  width: 450px;
 }
 
 .form {
@@ -72,6 +128,19 @@
   text-transform: uppercase;
   color: #939094;
 }
+.labelSuc{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #939094;
+  margin: 0px auto;
+}
 .button {
   height: 53px;
   background: #220A2E;
@@ -124,6 +193,7 @@
     left: 10%;
   }
 }
+
 @media only screen and (max-width: 1100px) {
   .form {
     width: 400px;

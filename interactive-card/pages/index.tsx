@@ -119,7 +119,6 @@ const Home: NextPage = () => {
     cardErrorHandler(values.number)
 
     event.preventDefault();
-    console.log("cvc:", cvcError, "year:", yearError, "month:", monthError, "number:", cardError)
 
   }
   useEffect(() => {
@@ -136,7 +135,15 @@ const Home: NextPage = () => {
       <div className={styles.leftSide}></div>
       <div className={styles.rightSide}>
 
-        {success ? <> <button onClick={() => { setsuccess(false) }}></button> </> : <>
+        {success ? <> <div className={styles.form}>
+          <div className={styles.check}>
+            <div className={styles.icon}></div>
+          </div>
+          <div className={styles.Success}> Thank you !</div>
+          <div className={styles.labelSuc}>We’ve added your card details</div>
+          <button className={styles.button} onClick={() => { setsuccess(false) }}> Confirm</button>
+
+        </div></> : <>
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.formContol}>
               <label className={styles.label}>CARDHOLDER Name</label>
@@ -161,7 +168,7 @@ const Home: NextPage = () => {
                 value={values.number || ""}
                 onChange={handleChange}
               />
-              <span>{cardError}</span>
+              <span className={styles.error}>{cardError}</span>
             </div>
             <div className={styles.formwrapper}>
               <div className={styles.formContol} style={{ width: "50%" }}>
@@ -177,7 +184,7 @@ const Home: NextPage = () => {
                       value={values.month || ""}
                       onChange={handleChange}
                     />
-                    <span>{monthError}</span>
+                    <span className={styles.error}>{monthError}</span>
                   </div>
                   <div>
                     <input
@@ -189,7 +196,7 @@ const Home: NextPage = () => {
                       value={values.year || ""}
                       onChange={handleChange}
                     />
-                    <span>{yearError}</span>
+                    <span className={styles.error}>{yearError}</span>
                   </div>
 
                 </div>
@@ -204,7 +211,7 @@ const Home: NextPage = () => {
                   value={values.cvc || ""}
                   onChange={handleChange}
                 />
-                <span>{cvcError}</span>
+                <span className={styles.error}>{cvcError}</span>
               </div>
             </div>
 
