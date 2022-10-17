@@ -14,16 +14,17 @@ type Values = {
   year: string,
   cvc: string,
 }
+const initialState ={
+  name: "",
+  number: "",
+  month: "",
+  year: "",
+  cvc: "",
+}
 const Home: NextPage = () => {
-  const [values, setValues] = useState<Values>({
-    name: "",
-    number: "",
-    month: "",
-    year: "",
-    cvc: "",
-  });
+  const [values, setValues] = useState<Values>(initialState);
   const [success, setsuccess] = useState(false)
-  const [cvcError, setcvcError] = useState("")
+  const [cvcError, setcvcError] = useState("*")
   const [monthError, setmonthError] = useState("")
   const [yearError, setyearError] = useState("")
   const [cardError, setcardError] = useState("")
@@ -119,6 +120,7 @@ const Home: NextPage = () => {
     cardErrorHandler(values.number)
 
     event.preventDefault();
+    setValues(initialState);
 
   }
   useEffect(() => {
@@ -225,6 +227,7 @@ const Home: NextPage = () => {
 
 
   )
+
 
 }
 
