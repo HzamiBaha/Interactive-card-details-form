@@ -80,15 +80,16 @@
         align-items: center;
         justify-content: flex-end;
         padding: 20px;
-    
+
         font-family: 'Inter';
         font-style: normal;
         font-weight: 700;
         font-size: 16px;
         line-height: 22px;
-    
+
         color: #FFFFFF;
     }
+
     .userInfo {
         width: 350px;
         height: 22px;
@@ -139,15 +140,16 @@
         align-items: center;
         justify-content: flex-end;
         padding: 20px;
-    
+
         font-family: 'Inter';
         font-style: normal;
         font-weight: 700;
         font-size: 14px;
         line-height: 22px;
-    
+
         color: #FFFFFF;
     }
+
     .userInfo {
         width: 280px;
         height: 22px;
@@ -179,4 +181,39 @@
         padding-top: 80px;
         display: flex;
     }
+}
+
+@media only screen and (max-width: 380px) {
+    .cardNumber {
+        width: 280px;
+        min-width: fit-content;
+        height: 42px;
+        text-transform: uppercase;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 21px;
+        letter-spacing: 0.08em;
+        color: #FBF8F8;
+        margin: auto 10px;
+        padding-top: 80px;
+        display: flex;
+    }
+
+    .userInfo {
+        width: 260px;
+        height: 22px;
+        display: flex;
+        justify-content: space-between;
+        margin: 50px auto 0px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+    }
+
 }

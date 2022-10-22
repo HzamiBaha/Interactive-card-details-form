@@ -278,3 +278,69 @@
     left: calc(100% - 345px);
   }
 }
+
+@media only screen and (max-width: 380px) {
+  .cardFront {
+    width: 290px;
+    height: 160px;
+    top: 130px;
+    position: absolute;
+    left: 15px;
+    z-index: 10;
+  }
+
+  .cardBack {
+    width: 290px;
+    height: 160px;
+    top: 20px;
+    position: absolute;
+    left: calc(100% - 310px);
+  }
+
+  .leftSide {
+    width: auto;
+    height: 240px;
+    background: content-box url("/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .rightSide {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 280px);
+  }
+
+  .form {
+    width: 80%;
+    gap: 5px;
+  }
+
+  .label {
+    font-size: 11px;
+    line-height: 14px;
+  }
+  .formInput {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .button {
+    height: 40px;
+    background: #220A2E;
+    border-radius: 5px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    margin-top: 10px;
+    border: none;
+  }
+  
+}
